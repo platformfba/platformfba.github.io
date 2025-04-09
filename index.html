@@ -1,83 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PlatformFBA App</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    /* Reset some default styles */
+    * {
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      min-height: 100vh;
+      background: #f4f7f9;
       color: #333;
     }
-    header {
-      background: #333;
+    /* Sidebar styles */
+    .sidebar {
+      width: 250px;
+      background: linear-gradient(135deg, #2a5298, #1e3c72);
       color: #fff;
       padding: 20px;
-      text-align: center;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    main {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-    }
-    .alert {
-      background: #ffeb3b;
-      border: 1px solid #fbc02d;
-      padding: 15px;
+    .sidebar h2 {
+      font-size: 1.5em;
       margin-bottom: 20px;
       text-align: center;
-      font-size: 1.1em;
-      font-weight: bold;
+      letter-spacing: 1px;
     }
-    .links {
-      margin-top: 20px;
+    .sidebar nav a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      padding: 12px 10px;
+      margin-bottom: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+    .sidebar nav a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .sidebar .footer {
+      font-size: 0.8em;
       text-align: center;
+      margin-top: 40px;
+      opacity: 0.8;
+    }
+
+    /* Main content styles */
+    .main-content {
+      flex-grow: 1;
+      padding: 40px;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .main-content header {
+      border-bottom: 2px solid #eee;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+    }
+    .main-content header h1 {
+      font-size: 2.5em;
+      color: #1e3c72;
+    }
+    .main-content section {
+      margin-bottom: 30px;
+      line-height: 1.6;
+      font-size: 1.1em;
+    }
+    .main-content .cta {
+      text-align: center;
+      padding: 20px;
+      background: #1e3c72;
+      color: #fff;
+      border-radius: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      margin-top: 20px;
+    }
+    .main-content .cta:hover {
+      background: #163257;
     }
     a {
-      color: #0066cc;
+      color: #1e3c72;
       text-decoration: none;
-      font-weight: bold;
     }
     a:hover {
       text-decoration: underline;
     }
-    footer {
-      background: #f4f4f4;
-      color: #777;
-      text-align: center;
-      padding: 10px;
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      font-size: 0.9em;
+    
+    /* Responsive layout */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+      }
+      .main-content {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>PlatformFBA App</h1>
-  </header>
-  <main>
-    <p>Welcome to PlatformFBA—your resource for the best Amazon deals and tools to grow your Amazon business.</p>
-    
-    <!-- Alert message prompting users to join Discord for access to the ASIN analyzer app -->
-    <div class="alert">
-      To access the ASIN analyzer app and other exclusive tools, please join our Discord community.
-    </div>
-    
-    <div class="links">
-      <p>
-        <a href="https://discord.gg/pmm9nVpXCW" target="_blank">Join our Discord Community</a> |
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div>
+      <h2>PlatformFBA</h2>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="help.html">Help & Support</a>
+        <a href="https://discord.gg/pmm9nVpXCW" target="_blank">Join Discord</a>
         <a href="https://x.com/platformfba" target="_blank">Follow us on X</a>
-      </p>
+      </nav>
     </div>
-  </main>
-  <footer>
-    <p>&copy; 2025 PlatformFBA. All rights reserved.</p>
-  </footer>
+    <div class="footer">
+      &copy; 2025 PlatformFBA
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <header>
+      <h1>Welcome to PlatformFBA!</h1>
+    </header>
+    <section>
+      <p>PlatformFBA is your go-to resource for finding exclusive Amazon deals, powerful ASIN analysis, and everything you need to grow your Amazon business. Our tools and community are designed with you in mind!</p>
+    </section>
+    <section>
+      <p>To access our exclusive ASIN analyzer app and other cutting-edge tools, please join our Discord community. Our Discord server is the central hub where you’ll receive instant updates, engage with experts, and gain access to premium insights.</p>
+    </section>
+    <a class="cta" href="https://discord.gg/pmm9nVpXCW" target="_blank">Join Our Discord Community</a>
+  </div>
 </body>
 </html>
